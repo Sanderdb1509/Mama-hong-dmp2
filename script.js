@@ -4,10 +4,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
     
     navLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            const href = this.getAttribute('href');
-            // Alleen smooth scroll voor ankerlinks op dezelfde pagina (#home, #about, etc.)
-            if (href && href.startsWith('#')) {
+        const href = link.getAttribute('href');
+        // Alleen ankerlinks (#home, #about, etc.) krijgen smooth scroll – andere links navigeren normaal
+        if (href && href.startsWith('#')) {
+            link.addEventListener('click', function(e) {
                 const targetSection = document.querySelector(href);
                 if (targetSection) {
                     e.preventDefault();
@@ -18,9 +18,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     navLinks.forEach(l => l.classList.remove('active'));
                     this.classList.add('active');
                 }
-            }
-            // Links naar andere pagina's (contact.html, menu.html, etc.) gewoon laten navigeren
-        });
+            });
+        }
     });
 
     // Update active nav link on scroll
