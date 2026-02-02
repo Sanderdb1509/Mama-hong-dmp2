@@ -93,14 +93,17 @@ body {
 .language-selector {
     display: flex;
     align-items: center;
+    gap: 8px;
 }
 
 .flag-button {
     background: none;
-    border: none;
-    padding: 0;
+    border: 2px solid transparent;
+    border-radius: 50%;
+    padding: 2px;
     cursor: pointer;
     display: flex;
+    transition: all 0.2s ease;
     align-items: center;
     opacity: 0.8;
     transition: opacity 0.3s;
@@ -108,6 +111,13 @@ body {
 
 .flag-button:hover {
     opacity: 1;
+    transform: scale(1.1);
+}
+
+.flag-button.active {
+    border-color: var(--gold);
+    opacity: 1;
+    box-shadow: 0 0 8px rgba(196, 161, 96, 0.5);
 }
 
 .flag-button svg {

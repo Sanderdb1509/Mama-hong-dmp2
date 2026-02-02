@@ -8,16 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&family=Oswald:wght@400;500;600;700&family=Red+Hat+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <base id="siteBase" href="">
-    <script>
-    (function(){
-      var p = window.location.pathname;
-      var basePath = p.endsWith('/') ? p : p.slice(0, p.lastIndexOf('/') + 1);
-      var b = document.getElementById('siteBase');
-      if (b) b.href = window.location.origin + basePath;
-    })();
-    </script>
-</head>
+    </head>
 <body>
     <!-- Top Bar -->
     <div class="top-bar">
@@ -33,16 +24,33 @@
                         <a href="https://www.youtube.com/watch?v=BSYZC1VG3aE" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
                     </div>
                     <div class="language-selector">
-                        <button class="flag-button" aria-label="English">
-                            <svg width="28" height="28" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
-                                <clipPath id="circleClip">
-                                    <circle cx="30" cy="15" r="15"/>
-                                </clipPath>
-                                <rect width="60" height="30" fill="#012169" clip-path="url(#circleClip)"/>
-                                <path d="M0 0L60 30M60 0L0 30" stroke="#FFF" stroke-width="2.5" clip-path="url(#circleClip)"/>
-                                <path d="M0 0L60 30M60 0L0 30" stroke="#C8102E" stroke-width="1.5" clip-path="url(#circleClip)"/>
-                                <path d="M30 0V30M0 15H60" stroke="#FFF" stroke-width="3.5" clip-path="url(#circleClip)"/>
-                                <path d="M30 0V30M0 15H60" stroke="#C8102E" stroke-width="2" clip-path="url(#circleClip)"/>
+                        <button class="flag-button" data-lang="en" aria-label="English">
+                            <svg width="24" height="24" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <defs><clipPath id="ukCircle2"><circle cx="30" cy="30" r="28"/></clipPath></defs>
+                                <circle cx="30" cy="30" r="28" fill="#012169"/>
+                                <g clip-path="url(#ukCircle2)">
+                                    <path d="M0 0L60 60M60 0L0 60" stroke="#FFF" stroke-width="8"/>
+                                    <path d="M0 0L60 60M60 0L0 60" stroke="#C8102E" stroke-width="4"/>
+                                    <path d="M30 0V60M0 30H60" stroke="#FFF" stroke-width="12"/>
+                                    <path d="M30 0V60M0 30H60" stroke="#C8102E" stroke-width="6"/>
+                                </g>
+                            </svg>
+                        </button>
+                        <button class="flag-button" data-lang="vi" aria-label="Tiếng Việt">
+                            <svg width="24" height="24" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="30" cy="30" r="28" fill="#DA251D"/>
+                                <polygon points="30,12 34.5,24 47,24 37,32 41,45 30,37 19,45 23,32 13,24 25.5,24" fill="#FFCD00"/>
+                            </svg>
+                        </button>
+                        <button class="flag-button" data-lang="nl" aria-label="Nederlands">
+                            <svg width="24" height="24" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                                <defs><clipPath id="nlCircle2"><circle cx="30" cy="30" r="28"/></clipPath></defs>
+                                <circle cx="30" cy="30" r="28" fill="#FFF"/>
+                                <g clip-path="url(#nlCircle2)">
+                                    <rect x="0" y="2" width="60" height="19" fill="#AE1C28"/>
+                                    <rect x="0" y="21" width="60" height="18" fill="#FFF"/>
+                                    <rect x="0" y="39" width="60" height="19" fill="#21468B"/>
+                                </g>
                             </svg>
                         </button>
                     </div>
@@ -59,12 +67,12 @@
                     <a href="index.html"><img src="Text-logo-mama-hong.png" alt="Mama Hồng" class="logo-image"></a>
                 </div>
                 <nav class="main-nav">
-                    <a href="index.html" class="nav-link">HOME</a>
-                    <a href="menu.html" class="nav-link active">MENU</a>
-                    <a href="order.html" class="nav-link">ORDER</a>
-                    <a href="index.html#about" class="nav-link">ABOUT US</a>
-                    <a href="index.html#vietnam" class="nav-link">VIETNAM</a>
-                    <a href="contact.html" class="nav-link">CONTACT</a>
+                    <a href="index.html" class="nav-link" data-translate="nav_home">HOME</a>
+                    <a href="menu.html" class="nav-link active" data-translate="nav_menu">MENU</a>
+                    <a href="order.html" class="nav-link" data-translate="nav_order">ORDER</a>
+                    <a href="index.html#about" class="nav-link" data-translate="nav_about">ABOUT US</a>
+                    <a href="index.html#vietnam" class="nav-link" data-translate="nav_vietnam">VIETNAM</a>
+                    <a href="contact.html" class="nav-link" data-translate="nav_contact">CONTACT</a>
                 </nav>
             </div>
         </div>
@@ -73,16 +81,16 @@
     <!-- Menu Section -->
     <section class="menu-list-section">
         <div class="container">
-            <h1 class="menu-list-title">Menu</h1>
+            <h1 class="menu-list-title" data-translate="menu_page_title">Menu</h1>
             
             <!-- Vietnamese Bowls -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Vietnamese Bowls</h2>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_bowls">Vietnamese Bowls</h2>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
-                            <h3>Pho Ga <span class="new-badge">NIEUW!</span></h3>
-                            <p>Heerlijke rijstnoedelsoep met kip</p>
+                            <h3>Pho Ga <span class="new-badge" data-translate="order_new">NIEUW!</span></h3>
+                            <p data-translate="desc_pho_ga">Heerlijke rijstnoedelsoep met kip</p>
                         </div>
                         <div class="menu-item-right">
                             <span class="menu-item-price">€9,95</span>
@@ -98,7 +106,7 @@
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Pho Bo</h3>
-                            <p>Rijstnoedelsoep met kogelbiefstuk en rundvleesballetjes</p>
+                            <p data-translate="desc_pho_bo">Rijstnoedelsoep met kogelbiefstuk en rundvleesballetjes</p>
                         </div>
                         <div class="menu-item-right">
                             <span class="menu-item-price">€10,95</span>
@@ -114,7 +122,7 @@
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bun Tôm</h3>
-                            <p>Heerlijke maaltijdsalade met gegrilde garnalen en rijstnoedel</p>
+                            <p data-translate="desc_bun_tom">Heerlijke maaltijdsalade met gegrilde garnalen en rijstnoedel</p>
                         </div>
                         <div class="menu-item-right">
                             <span class="menu-item-price">€10,95</span>
@@ -132,41 +140,41 @@
 
             <!-- Bánh mì Vietnamese Baguette -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Bánh mì Vietnamese baguette</h2>
-                <p class="menu-list-note">Bánh mì wordt geserveerd met zoetzure wortel, komkommer optioneel koriander / peper</p>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_banhmi">Bánh mì Vietnamese baguette</h2>
+                <p class="menu-list-note" data-translate="menu_cat_banhmi_note">Bánh mì wordt geserveerd met zoetzure wortel, komkommer optioneel koriander / peper</p>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bánh mì Saigon</h3>
-                            <p>Citroengras gemarineerde kip, chili mayo saus</p>
+                            <p data-translate="desc_banhmi_saigon">Citroengras gemarineerde kip, chili mayo saus</p>
                         </div>
                         <span class="menu-item-price">€5,00</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bánh mì Vĩnh Long</h3>
-                            <p>Hoisin gemarineerd rundvlees, chili hoisin saus</p>
+                            <p data-translate="desc_banhmi_vinhlong">Hoisin gemarineerd rundvlees, chili hoisin saus</p>
                         </div>
                         <span class="menu-item-price">€6,00</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bánh mì Hanoi</h3>
-                            <p>Zoete aardappel, avocado, soja saus</p>
+                            <p data-translate="desc_banhmi_hanoi">Zoete aardappel, avocado, soja saus</p>
                         </div>
                         <span class="menu-item-price">€5,00</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bánh mì Nha Trang</h3>
-                            <p>Zout en peper gemalen, chili mayo saus</p>
+                            <p data-translate="desc_banhmi_nhatrang">Zout en peper gemalen, chili mayo saus</p>
                         </div>
                         <span class="menu-item-price">€6,00</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Bánh mì Hue</h3>
-                            <p>Kipspiesjes, chili mayo saus</p>
+                            <p data-translate="desc_banhmi_hue">Kipspiesjes, chili mayo saus</p>
                         </div>
                         <span class="menu-item-price">€5,50</span>
                     </div>
@@ -175,34 +183,34 @@
 
             <!-- Gỏi cuốn Verse Rijstvelrolletjes -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Gỏi cuốn verse rijstvelrolletjes</h2>
-                <p class="menu-list-note">Gỏi cuốn wordt geserveerd met o.a. zoetzure wortel, komkommer en rijstnoedels</p>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_goicuon">Gỏi cuốn verse rijstvelrolletjes</h2>
+                <p class="menu-list-note" data-translate="menu_cat_goicuon_note">Gỏi cuốn wordt geserveerd met o.a. zoetzure wortel, komkommer en rijstnoedels</p>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Gỏi cuốn Saigon</h3>
-                            <p>Citroengras gemarineerde kip, munt</p>
+                            <p data-translate="desc_goicuon_saigon">Citroengras gemarineerde kip, munt</p>
                         </div>
                         <span class="menu-item-price">€3,20</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Gỏi cuốn Hanoi</h3>
-                            <p>Zoete aardappel, avocado, koriander</p>
+                            <p data-translate="desc_goicuon_hanoi">Zoete aardappel, avocado, koriander</p>
                         </div>
                         <span class="menu-item-price">€3,20</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Gỏi cuốn Nha Trang</h3>
-                            <p>Zout en peper gemalen, munt</p>
+                            <p data-translate="desc_goicuon_nhatrang">Zout en peper gemalen, munt</p>
                         </div>
                         <span class="menu-item-price">€3,50</span>
                     </div>
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
                             <h3>Gỏi cuốn Hue</h3>
-                            <p>Kipspiesje, munt - nem nuong</p>
+                            <p data-translate="desc_goicuon_hue">Kipspiesje, munt - nem nuong</p>
                         </div>
                         <span class="menu-item-price">€3,20</span>
                     </div>
@@ -211,7 +219,7 @@
 
             <!-- Fast & Tasty -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Fast & Tasty</h2>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_fast">Fast & Tasty</h2>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
@@ -224,7 +232,7 @@
 
             <!-- Vegan -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Vegan</h2>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_vegan">Vegan</h2>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
@@ -237,7 +245,7 @@
 
             <!-- The Rotterdamse Loempia -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">The Rotterdamse Loempia</h2>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_loempia">The Rotterdamse Loempia</h2>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
@@ -250,7 +258,7 @@
 
             <!-- Drinks -->
             <div class="menu-list-category">
-                <h2 class="menu-list-category-title">Drinks</h2>
+                <h2 class="menu-list-category-title" data-translate="menu_cat_drinks">Drinks</h2>
                 <div class="menu-list-items">
                     <div class="menu-list-item">
                         <div class="menu-item-name-desc">
@@ -376,7 +384,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-text">
-                    <p>&copy; 2026 Mama Hong. All rights reserved.</p>
+                    <p data-translate="footer_copyright">&copy; 2026 Mama Hong. All rights reserved.</p>
                 </div>
                 <div class="footer-social">
                     <a href="https://www.facebook.com/mamahong/?locale=nl_NL" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
@@ -387,6 +395,7 @@
         </div>
     </footer>
 
+    <script src="translations.js"></script>
     <script src="script.js"></script>
     <script>
         // Store that we're coming from menu page
