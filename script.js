@@ -5,20 +5,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const targetId = this.getAttribute('href');
-            const targetSection = document.querySelector(targetId);
-            
-            if (targetSection) {
-                targetSection.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-                
-                // Update active state
-                navLinks.forEach(l => l.classList.remove('active'));
-                this.classList.add('active');
+            const href = this.getAttribute('href');
+            // Alleen smooth scroll voor ankerlinks op dezelfde pagina (#home, #about, etc.)
+            if (href && href.startsWith('#')) {
+                const targetSection = document.querySelector(href);
+                if (targetSection) {
+                    e.preventDefault();
+                    targetSection.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                    navLinks.forEach(l => l.classList.remove('active'));
+                    this.classList.add('active');
+                }
             }
+            // Links naar andere pagina's (contact.html, menu.html, etc.) gewoon laten navigeren
         });
     });
 
